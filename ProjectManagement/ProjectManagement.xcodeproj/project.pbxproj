@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BDDA824525966F0F002BA120 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA824425966F0F002BA120 /* AppDelegate.swift */; };
+		BDDA824725966F0F002BA120 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA824625966F0F002BA120 /* SceneDelegate.swift */; };
+		BDDA824925966F0F002BA120 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA824825966F0F002BA120 /* ViewController.swift */; };
+		BDDA824C25966F0F002BA120 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDDA824A25966F0F002BA120 /* Main.storyboard */; };
+		BDDA824E25966F12002BA120 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDDA824D25966F12002BA120 /* Assets.xcassets */; };
+		BDDA825125966F12002BA120 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDDA824F25966F12002BA120 /* LaunchScreen.storyboard */; };
+		BDDA826225968D6B002BA120 /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA826125968D6B002BA120 /* AddPersonViewController.swift */; };
+		BDDA826525969FB3002BA120 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA826425969FB3002BA120 /* DBHelper.swift */; };
+		BDDA82682596A02D002BA120 /* Osoba.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA82672596A02D002BA120 /* Osoba.swift */; };
+		BDDA826B2596A06A002BA120 /* Projekt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA826A2596A06A002BA120 /* Projekt.swift */; };
+		BDDA826F2596A10A002BA120 /* Uloga.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA826E2596A10A002BA120 /* Uloga.swift */; };
+		BDDA82722596A125002BA120 /* UlogaOsobe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA82712596A125002BA120 /* UlogaOsobe.swift */; };
+		BDDA82752596A18A002BA120 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA82742596A18A002BA120 /* Person.swift */; };
+		BDDA827F25A0D35E002BA120 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA827E25A0D35E002BA120 /* PersonViewController.swift */; };
+		BDDA828525A0F49C002BA120 /* PersonEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA828425A0F49C002BA120 /* PersonEditViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BDDA824125966F0F002BA120 /* ProjectManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDDA824425966F0F002BA120 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BDDA824625966F0F002BA120 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BDDA824825966F0F002BA120 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BDDA824B25966F0F002BA120 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BDDA824D25966F12002BA120 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BDDA825025966F12002BA120 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BDDA825225966F12002BA120 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "ProjectManagement/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
+		BDDA826125968D6B002BA120 /* AddPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
+		BDDA826425969FB3002BA120 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		BDDA82672596A02D002BA120 /* Osoba.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Osoba.swift; sourceTree = "<group>"; };
+		BDDA826A2596A06A002BA120 /* Projekt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projekt.swift; sourceTree = "<group>"; };
+		BDDA826E2596A10A002BA120 /* Uloga.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uloga.swift; sourceTree = "<group>"; };
+		BDDA82712596A125002BA120 /* UlogaOsobe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UlogaOsobe.swift; sourceTree = "<group>"; };
+		BDDA82742596A18A002BA120 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		BDDA827E25A0D35E002BA120 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersonViewController.swift; path = ProjectManagement/Controller/PersonViewController.swift; sourceTree = SOURCE_ROOT; };
+		BDDA828425A0F49C002BA120 /* PersonEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonEditViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BDDA823E25966F0F002BA120 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BDDA823825966F0F002BA120 = {
+			isa = PBXGroup;
+			children = (
+				BDDA824325966F0F002BA120 /* ProjectManagement */,
+				BDDA824225966F0F002BA120 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BDDA824225966F0F002BA120 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BDDA824125966F0F002BA120 /* ProjectManagement.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BDDA824325966F0F002BA120 /* ProjectManagement */ = {
+			isa = PBXGroup;
+			children = (
+				BDDA828425A0F49C002BA120 /* PersonEditViewController.swift */,
+				BDDA825D25967C4E002BA120 /* Supporting Files */,
+				BDDA825C25967C43002BA120 /* Helper */,
+				BDDA825A25967C14002BA120 /* Model */,
+				BDDA825B25967C1D002BA120 /* View */,
+				BDDA825925967C0C002BA120 /* Controller */,
+			);
+			path = ProjectManagement;
+			sourceTree = "<group>";
+		};
+		BDDA825925967C0C002BA120 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BDDA827E25A0D35E002BA120 /* PersonViewController.swift */,
+				BDDA824825966F0F002BA120 /* ViewController.swift */,
+				BDDA826125968D6B002BA120 /* AddPersonViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BDDA825A25967C14002BA120 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BDDA826425969FB3002BA120 /* DBHelper.swift */,
+				BDDA82672596A02D002BA120 /* Osoba.swift */,
+				BDDA826A2596A06A002BA120 /* Projekt.swift */,
+				BDDA826E2596A10A002BA120 /* Uloga.swift */,
+				BDDA82712596A125002BA120 /* UlogaOsobe.swift */,
+				BDDA82742596A18A002BA120 /* Person.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BDDA825B25967C1D002BA120 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BDDA825F25967CC5002BA120 /* StoryBoard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BDDA825C25967C43002BA120 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		BDDA825D25967C4E002BA120 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BDDA824425966F0F002BA120 /* AppDelegate.swift */,
+				BDDA824625966F0F002BA120 /* SceneDelegate.swift */,
+				BDDA825225966F12002BA120 /* Info.plist */,
+				BDDA824D25966F12002BA120 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BDDA825F25967CC5002BA120 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				BDDA824A25966F0F002BA120 /* Main.storyboard */,
+				BDDA824F25966F12002BA120 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BDDA824025966F0F002BA120 /* ProjectManagement */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDDA825525966F12002BA120 /* Build configuration list for PBXNativeTarget "ProjectManagement" */;
+			buildPhases = (
+				BDDA823D25966F0F002BA120 /* Sources */,
+				BDDA823E25966F0F002BA120 /* Frameworks */,
+				BDDA823F25966F0F002BA120 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ProjectManagement;
+			productName = ProjectManagement;
+			productReference = BDDA824125966F0F002BA120 /* ProjectManagement.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BDDA823925966F0F002BA120 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					BDDA824025966F0F002BA120 = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+				};
+			};
+			buildConfigurationList = BDDA823C25966F0F002BA120 /* Build configuration list for PBXProject "ProjectManagement" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BDDA823825966F0F002BA120;
+			productRefGroup = BDDA824225966F0F002BA120 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BDDA824025966F0F002BA120 /* ProjectManagement */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BDDA823F25966F0F002BA120 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDDA825125966F12002BA120 /* LaunchScreen.storyboard in Resources */,
+				BDDA824E25966F12002BA120 /* Assets.xcassets in Resources */,
+				BDDA824C25966F0F002BA120 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BDDA823D25966F0F002BA120 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDDA82752596A18A002BA120 /* Person.swift in Sources */,
+				BDDA824925966F0F002BA120 /* ViewController.swift in Sources */,
+				BDDA82722596A125002BA120 /* UlogaOsobe.swift in Sources */,
+				BDDA824525966F0F002BA120 /* AppDelegate.swift in Sources */,
+				BDDA826525969FB3002BA120 /* DBHelper.swift in Sources */,
+				BDDA828525A0F49C002BA120 /* PersonEditViewController.swift in Sources */,
+				BDDA826B2596A06A002BA120 /* Projekt.swift in Sources */,
+				BDDA824725966F0F002BA120 /* SceneDelegate.swift in Sources */,
+				BDDA827F25A0D35E002BA120 /* PersonViewController.swift in Sources */,
+				BDDA82682596A02D002BA120 /* Osoba.swift in Sources */,
+				BDDA826F2596A10A002BA120 /* Uloga.swift in Sources */,
+				BDDA826225968D6B002BA120 /* AddPersonViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BDDA824A25966F0F002BA120 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDDA824B25966F0F002BA120 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BDDA824F25966F12002BA120 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDDA825025966F12002BA120 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BDDA825325966F12002BA120 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BDDA825425966F12002BA120 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BDDA825625966F12002BA120 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "ProjectManagement/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.ProjectManagement;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BDDA825725966F12002BA120 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "ProjectManagement/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.ProjectManagement;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BDDA823C25966F0F002BA120 /* Build configuration list for PBXProject "ProjectManagement" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDDA825325966F12002BA120 /* Debug */,
+				BDDA825425966F12002BA120 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDDA825525966F12002BA120 /* Build configuration list for PBXNativeTarget "ProjectManagement" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDDA825625966F12002BA120 /* Debug */,
+				BDDA825725966F12002BA120 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BDDA823925966F0F002BA120 /* Project object */;
+}
