@@ -29,8 +29,8 @@ class PersonEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = "Marin"
-        surnameLabel.text = "Smoljanic"
+        nameLabel.text = "Petar"
+        surnameLabel.text = "Petric"
         personalIdLabel.text = "38448491183"
         print("----------------")
         print(index)

@@ -14,7 +14,7 @@ class DBHelper
     {
         db = openDatabase()
         
-        print("")
+        print("IZ DbHELPERA")
         print("")
         //createTableOsoba()
         //insertOsoba(osoba: Osoba(idOsobe: 0, imeOsobe: "Karlo", prezimeOsobe: "Krcelic", OIB: "749933829129"))
@@ -29,8 +29,8 @@ class DBHelper
         
         print("")
         print("")
-        // createTableProjekt()
-        // insertProjekt(projekt: Projekt(SifProjekta: 5, NazProjekta: "Pleternica", OpisProjekta: "Izrada murala", DatPocetka: 2, DatZavrsetka: 10))
+        createTableProjekt()
+        insertProjekt(projekt: Projekt(SifProjekta: 5, NazProjekta: "Pleternica", OpisProjekta: "Izrada murala", DatPocetka: 2, DatZavrsetka: 10))
         // procitaniProjekti = readProjekte()
         // deleteProjektByID(id: 4)
         // deleteTableProjekt()

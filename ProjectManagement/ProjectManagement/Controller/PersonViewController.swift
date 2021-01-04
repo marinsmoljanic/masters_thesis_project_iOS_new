@@ -89,6 +89,10 @@ extension PersonViewController: UITableViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let destination = storyboard.instantiateViewController(withIdentifier: "PersonEditViewController") as! PersonEditViewController
         destination.title = "Master Details"
+        
+        // let cell = tableView.cellForRow(at: indexPath) as! TableViewCell
+        // print(cell.textLabel?.text)
+        
         destination.index = indexPath.row
 
         navigationController?.pushViewController(destination, animated: true)
