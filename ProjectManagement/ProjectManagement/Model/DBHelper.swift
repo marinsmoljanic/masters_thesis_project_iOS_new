@@ -38,9 +38,9 @@ class DBHelper
         
         print("")
         print("")
-        // createTableUloga()
-        // insertUloga(uloga: Uloga(IdUloge: 0, NazUloge: "Vjezbenik"))
-        // insertUloga(uloga: Uloga(IdUloge: 1, NazUloge: "Pripravnik"))
+        createTableUloga()
+        insertUloga(uloga: Uloga(IdUloge: 0, NazUloge: "Vjezbenik"))
+        insertUloga(uloga: Uloga(IdUloge: 1, NazUloge: "Pripravnik"))
         // procitaneUloge = readUloge()
         // deleteUlogaByID(id: 0)
         // deleteTableUloga()

@@ -1,40 +1,28 @@
-//
-//  PersonEditViewController.swift
-//  ProjectManagement
-//
-//  Created by Marin Smoljanic on 1/2/21.
-//
-
 import UIKit
 
 class PersonEditViewController: UIViewController {
     public var index: Int
+    public var firstName: String
+    public var secondName: String
+    public var personalID: String
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var surnameLabel: UILabel!
     @IBOutlet weak var personalIdLabel: UILabel!
     
-    //init(personName: String){
-    //    self.personName = personName
-    //    super.init(nibName: nil, bundle: nil)
-   // }
-    
     required init?(coder aDecoder: NSCoder) {
         self.index = 1
+        self.firstName = "--empty--"
+        self.secondName = "--empty--"
+        self.personalID = "--empty--"
         super.init(coder: aDecoder)
     }
     
-    //required init?(coder: NSCoder) {
-    //   fatalError("init(coder:) has not been implemented")
-    //}
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = "Petar"
-        surnameLabel.text = "Petric"
-        personalIdLabel.text = "38448491183"
-        print("----------------")
-        print(index)
-        print("----------------")
+        nameLabel.text = self.firstName
+        surnameLabel.text = self.secondName
+        personalIdLabel.text = self.personalID
     }
     
     @IBAction func editPerson(_ sender: Any) {
@@ -42,10 +30,8 @@ class PersonEditViewController: UIViewController {
         let alert = UIAlertController(title: "Uredi podatke uloga", message: nil, preferredStyle: .alert)
         alert.addTextField { (tf) in tf.placeholder = String("Testna vrijednost")}
         
-        
         let action = UIAlertAction(title: "Pohrani", style: .default) { (_) in
             guard let nazUloge = alert.textFields![0].text
-               
                 else { return }
            
             // let uloga = Uloga(SifProjekta: <#T##Int#>, NazProjekta: <#T##String#>, OpisProjekta: <#T##String#>, DatPocetka: <#T##Int#>, DatZavrsetka: <#T##Int#>)

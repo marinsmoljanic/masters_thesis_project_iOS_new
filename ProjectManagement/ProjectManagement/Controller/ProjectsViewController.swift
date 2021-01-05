@@ -1,10 +1,3 @@
-//
-//  ProjectsViewController.swift
-//  ProjectManagement
-//
-//  Created by Marin Smoljanic on 1/4/21.
-//
-
 import UIKit
 
 class ProjectsViewController: UIViewController, UITableViewDelegate,  UITableViewDataSource {
@@ -62,14 +55,14 @@ class ProjectsViewController: UIViewController, UITableViewDelegate,  UITableVie
         tableView.deselectRow(at: indexPath, animated: true)
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let destination = storyboard.instantiateViewController(withIdentifier: "PersonEditViewController") as! PersonEditViewController
+        let destination = storyboard.instantiateViewController(withIdentifier: "ProjectEditViewController") as! ProjectEditViewController
         destination.title = "Projektni detalji"
         
-        // destination.id = projects[indexPath.row].getSifProjekta()
-        // destination.name = projects[indexPath.row].getNazivProjekta()
-        // destination.desc = projects[indexPath.row].getOpisProjekta()
-        // destination.startDate = projects[indexPath.row].getDatPoceta()
-        // destination.endDate = projects[indexPath.row].getDatZavrsetka()
+        destination.id = projects[indexPath.row].getSifProjekta()
+        destination.name = projects[indexPath.row].getNazivProjekta()
+        destination.desc = projects[indexPath.row].getOpisProjekta()
+        destination.startDate = projects[indexPath.row].getDatPoceta()
+        destination.endDate = projects[indexPath.row].getDatZavrsetka()
 
         navigationController?.pushViewController(destination, animated: true)
     }
