@@ -120,7 +120,7 @@ class ProjectsViewController: UIViewController, UITableViewDelegate,  UITableVie
     }
     
     @IBAction func addNewProjectButton(_ sender: Any) {
-        let alert = UIAlertController(title: "Uneste novu osobu", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Unos novog projekta", message: nil, preferredStyle: .alert)
         alert.addTextField { (tf) in tf.placeholder = "Naziv projekta"}
         alert.addTextField { (tf) in tf.placeholder = "Opis projekta"}
         alert.addTextField { (tf) in tf.placeholder = "Datum pocetka"}

@@ -52,7 +52,23 @@ class RoleViewController: UIViewController, UITableViewDelegate,  UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        tableView.deselectRow(at: indexPath, animated: true)
+        let alert = UIAlertController(title: "Promjena uloge", message: nil, preferredStyle: .alert)
+        alert.addTextField { (tf) in tf.text = String(self.roles[indexPath.row].getNazUloge())}
+
+        alert.addAction(UIAlertAction(title: "Povratak", style: .cancel, handler: nil))
+        let action = UIAlertAction(title: "Pohrani", style: .default) { (_) in
+            guard let nazivUloge = alert.textFields![0].text
+                  else { return }
+            
+            self.db.updateUlogaByID(id: self.roles[indexPath.row].getIdUloge(),
+                                    naziv: nazivUloge)}
+        
+        let delete = UIAlertAction(title: "Obrisi", style: .destructive) { (_) in
+            self.db.deleteUlogaByID(id: self.roles[indexPath.row].getIdUloge())}
+                
+        alert.addAction(delete)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -104,4 +120,21 @@ class RoleViewController: UIViewController, UITableViewDelegate,  UITableViewDat
             roleLabel.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 20).isActive = true
         }
     }
+    
+    @IBAction func addNewRole(_ sender: Any) {
+        let alert = UIAlertController(title: "Unos nove uloge", message: nil, preferredStyle: .alert)
+        alert.addTextField { (tf) in tf.placeholder = "Naziv uloge"}
+      
+        alert.addAction(UIAlertAction(title: "Povratak", style: .cancel, handler: nil))
+        let action = UIAlertAction(title: "Pohrani", style: .default) { (_) in
+            guard let nazivUloge = alert.textFields![0].text
+                  else { return }
+            
+            self.db.insertUloga(nazUloge: nazivUloge)
+        }
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
