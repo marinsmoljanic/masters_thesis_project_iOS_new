@@ -27,22 +27,23 @@ class DBHelper
         
         //createTableProjekt()
         //insertProjekt(projekt: Projekt(SifProjekta: 5, NazProjekta: "Pleternica", OpisProjekta: "Izrada murala", DatPocetka: 2, DatZavrsetka: 10))
-        // procitaniProjekti = readProjekte()
+        procitaniProjekti = readProjekte()
         // deleteProjektByID(id: 4)
         // deleteTableProjekt()
         
         // createTableUloga()
         // insertUloga(nazUloge: "Vjezbenik")
         // insertUloga(nazUloge: "Pripravnik")
-        // procitaneUloge = readUloge()
+        procitaneUloge = readUloge()
         // deleteUlogaByID(id: 0)
         // deleteTableUloga()
         
-        // createTableUlogaOsobe()
-        // insertUlogaOsobe(ulogaOsobe: UlogaOsobe(SifProjekta: 5, IdOsobe: 5, IdUloge: 0, DatDodjele: 222))
-        // deleteUlogaOsobeBySifProjekta(sifProjekta: 4)
-        // ulogeOsoba = readAllUlogaOsoba()
         // deleteTableUlogaOsobe()
+        // createTableUlogaOsobe()
+        // insertUlogaOsobe(ulogaOsobe: UlogaOsobe(SifProjekta: 1, IdOsobe: 1, IdUloge: 1, DatDodjele: 222))
+        // insertUlogaOsobe(ulogaOsobe: UlogaOsobe(SifProjekta: 2, IdOsobe: 1, IdUloge: 2, DatDodjele: 222))
+        // deleteUlogaOsobeBySifProjekta(sifProjekta: 4)
+        ulogeOsoba = readAllUlogaOsoba()
     }
 
     let dbPath: String = "myDb.sqlite"
@@ -50,7 +51,7 @@ class DBHelper
     var procitaneOsobe:[Osoba] = []
     var procitaniProjekti:[Projekt] = []
     var procitaneUloge:[Uloga] = []
-    var ulogeOsoba:[UlogaOsobe] = []
+    var ulogeOsoba:[UlogaOsobeEnriched] = []
 
     func openDatabase() -> OpaquePointer?
     {
@@ -174,8 +175,8 @@ class DBHelper
     }
     
     func readOsobe() -> [Osoba] {
-        // print("")
-        // print("LISTA OSOBA")
+        print("")
+        print("LISTA OSOBA")
         let queryStatementString = "SELECT * FROM osoba;"
         var queryStatement: OpaquePointer? = nil
         var psns : [Osoba] = []
@@ -568,23 +569,41 @@ class DBHelper
     }
     
     // -> [UlogaOsobe]
-    func readAllUlogaOsoba() -> [UlogaOsobe] {
+    func readAllUlogaOsoba() -> [UlogaOsobeEnriched] {
         print("")
         print("LISTA ULOGA OSOBA")
-        let queryStatementString = "SELECT * FROM ulogaosobaa;"
+        let queryStatementString = String("SELECT ulogaosobaa.SifProjekta, ulogaosobaa.IdOsobe, ulogaosobaa.IdUloge, " +
+                                          "ulogaosobaa.DatDodjele, projekt.NazProjekta, osoba.ImeOsobe, osoba.PrezimeOsobe, uloga.NazUloge " +
+                                          "FROM (((ulogaosobaa " +
+                                          "INNER JOIN projekt ON ulogaosobaa.SifProjekta = projekt.SifProjekta) " +
+                                          "INNER JOIN osoba ON ulogaosobaa.IdOsobe = osoba.IdOsobe) " +
+                                          "INNER JOIN uloga ON ulogaosobaa.IdUloge = uloga.IdUloge);")
+        
         var queryStatement: OpaquePointer? = nil
-        var psns : [UlogaOsobe] = []
+        var psns : [UlogaOsobeEnriched] = []
         if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
             
             // SQLITE 3 STEP ----> WHILE -> IZVEDI TE DOHVATI IZ BAZE
             while sqlite3_step(queryStatement) == SQLITE_ROW {
-                let _sifProjekta = sqlite3_column_int(queryStatement, 0)
-                let _idOsobe = sqlite3_column_int(queryStatement, 1)
-                let _idUloge = sqlite3_column_int(queryStatement, 2)
-                let _datDodjele = sqlite3_column_int(queryStatement, 3)
-               
-                psns.append(UlogaOsobe(SifProjekta: Int(_sifProjekta), IdOsobe: Int(_idOsobe), IdUloge: Int(_idUloge), DatDodjele: Int(_datDodjele)))
-                print("\(_sifProjekta) | \(_idOsobe) | \(_idUloge) | \(_datDodjele)")
+                let sifProjekta = sqlite3_column_int(queryStatement, 0)
+                let idOsobe = sqlite3_column_int(queryStatement, 1)
+                let idUloge = sqlite3_column_int(queryStatement, 2)
+                let datDodjele = sqlite3_column_int(queryStatement, 3)
+
+                let NazProjekta = String(describing: String(cString: sqlite3_column_text(queryStatement, 4)))
+                let ImeOsobe = String(describing: String(cString: sqlite3_column_text(queryStatement, 5)))
+                let PrezimeOsobe = String(describing: String(cString: sqlite3_column_text(queryStatement, 6)))
+                let NazUloge = String(describing: String(cString: sqlite3_column_text(queryStatement, 7)))
+                
+                psns.append(UlogaOsobeEnriched(SifProjekta: Int(sifProjekta),
+                                               IdOsobe: Int(idOsobe),
+                                               IdUloge: Int(idUloge),
+                                               DatDodjele: Int(datDodjele),
+                                               NazProjekta: NazProjekta,
+                                               ImeOsobe: ImeOsobe,
+                                               PrezimeOsobe: PrezimeOsobe,
+                                               NazUloge: NazUloge))
+                print("\(sifProjekta) | \(idOsobe) | \(idUloge) | \(datDodjele)  | \(NazProjekta)  | \(ImeOsobe)  | \(PrezimeOsobe) | \(NazUloge)")
             }
         } else {
             print("SELECT statement could not be prepared")
@@ -787,7 +806,7 @@ class DBHelper
     
     
     func deleteTableUlogaOsobe() {
-        let deleteStatementStirng = "DROP TABLE ulogaosobe;"
+        let deleteStatementStirng = "DROP TABLE ulogaosobaa;"
         var deleteStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(db, deleteStatementStirng, -1, &deleteStatement, nil) == SQLITE_OK {
             if sqlite3_step(deleteStatement) == SQLITE_DONE {

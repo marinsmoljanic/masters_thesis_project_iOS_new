@@ -279,9 +279,18 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7q-y0-Tn0">
+                                <rect key="frame" x="184" y="832" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="F1X-TC-pDv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="E7q-y0-Tn0" firstAttribute="bottom" secondItem="F1X-TC-pDv" secondAttribute="bottom" id="AMs-PT-Ifz"/>
+                            <constraint firstItem="E7q-y0-Tn0" firstAttribute="leading" secondItem="F1X-TC-pDv" secondAttribute="leading" constant="184" id="avJ-LF-wUJ"/>
+                            <constraint firstItem="F1X-TC-pDv" firstAttribute="trailing" secondItem="E7q-y0-Tn0" secondAttribute="trailing" constant="184" id="cqO-Mi-Khi"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qOS-mW-CbI">
                         <barButtonItem key="rightBarButtonItem" title="Uredi" id="Zim-Ci-Zfh">

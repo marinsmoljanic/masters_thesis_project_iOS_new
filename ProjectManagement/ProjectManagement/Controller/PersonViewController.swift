@@ -55,7 +55,7 @@ class PersonViewController: UIViewController, UITableViewDelegate,  UITableViewD
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let destination = storyboard.instantiateViewController(withIdentifier: "PersonEditViewController") as! PersonEditViewController
-        destination.title = String(persons[indexPath.row].getImeOsobe() + " " +  persons[indexPath.row].getImeOsobe() + " - " + "detalji")
+        destination.title = "Detalji osobe"
         
         destination.index = persons[indexPath.row].getIdOsobe()
         destination.firstName = persons[indexPath.row].getImeOsobe()
