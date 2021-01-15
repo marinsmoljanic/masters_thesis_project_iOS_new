@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD57ACA825A3863E00FD148C /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD57ACA725A3863E00FD148C /* ProjectsViewController.swift */; };
+		BD57ACB025A3A69400FD148C /* ProjectEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD57ACAF25A3A69400FD148C /* ProjectEditViewController.swift */; };
+		BD57ACB325A3A94A00FD148C /* RoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD57ACB225A3A94A00FD148C /* RoleViewController.swift */; };
+		BDA4203925AC892B0009B80B /* UlogaOsobeEnriched.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA4203825AC892B0009B80B /* UlogaOsobeEnriched.swift */; };
 		BDDA824525966F0F002BA120 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA824425966F0F002BA120 /* AppDelegate.swift */; };
 		BDDA824725966F0F002BA120 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA824625966F0F002BA120 /* SceneDelegate.swift */; };
 		BDDA824925966F0F002BA120 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA824825966F0F002BA120 /* ViewController.swift */; };
@@ -25,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD57ACA725A3863E00FD148C /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProjectsViewController.swift; path = ProjectManagement/Controller/ProjectsViewController.swift; sourceTree = SOURCE_ROOT; };
+		BD57ACAF25A3A69400FD148C /* ProjectEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEditViewController.swift; sourceTree = "<group>"; };
+		BD57ACB225A3A94A00FD148C /* RoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleViewController.swift; sourceTree = "<group>"; };
+		BDA4203825AC892B0009B80B /* UlogaOsobeEnriched.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UlogaOsobeEnriched.swift; sourceTree = "<group>"; };
 		BDDA824125966F0F002BA120 /* ProjectManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDDA824425966F0F002BA120 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDDA824625966F0F002BA120 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				BDDA828425A0F49C002BA120 /* PersonEditViewController.swift */,
+				BD57ACAF25A3A69400FD148C /* ProjectEditViewController.swift */,
 				BDDA825D25967C4E002BA120 /* Supporting Files */,
 				BDDA825C25967C43002BA120 /* Helper */,
 				BDDA825A25967C14002BA120 /* Model */,
@@ -90,6 +99,8 @@
 				BDDA827E25A0D35E002BA120 /* PersonViewController.swift */,
 				BDDA824825966F0F002BA120 /* ViewController.swift */,
 				BDDA826125968D6B002BA120 /* AddPersonViewController.swift */,
+				BD57ACA725A3863E00FD148C /* ProjectsViewController.swift */,
+				BD57ACB225A3A94A00FD148C /* RoleViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -103,6 +114,7 @@
 				BDDA826E2596A10A002BA120 /* Uloga.swift */,
 				BDDA82712596A125002BA120 /* UlogaOsobe.swift */,
 				BDDA82742596A18A002BA120 /* Person.swift */,
+				BDA4203825AC892B0009B80B /* UlogaOsobeEnriched.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,12 +229,16 @@
 				BDDA82722596A125002BA120 /* UlogaOsobe.swift in Sources */,
 				BDDA824525966F0F002BA120 /* AppDelegate.swift in Sources */,
 				BDDA826525969FB3002BA120 /* DBHelper.swift in Sources */,
+				BDA4203925AC892B0009B80B /* UlogaOsobeEnriched.swift in Sources */,
+				BD57ACB325A3A94A00FD148C /* RoleViewController.swift in Sources */,
 				BDDA828525A0F49C002BA120 /* PersonEditViewController.swift in Sources */,
 				BDDA826B2596A06A002BA120 /* Projekt.swift in Sources */,
 				BDDA824725966F0F002BA120 /* SceneDelegate.swift in Sources */,
 				BDDA827F25A0D35E002BA120 /* PersonViewController.swift in Sources */,
 				BDDA82682596A02D002BA120 /* Osoba.swift in Sources */,
+				BD57ACB025A3A69400FD148C /* ProjectEditViewController.swift in Sources */,
 				BDDA826F2596A10A002BA120 /* Uloga.swift in Sources */,
+				BD57ACA825A3863E00FD148C /* ProjectsViewController.swift in Sources */,
 				BDDA826225968D6B002BA120 /* AddPersonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
