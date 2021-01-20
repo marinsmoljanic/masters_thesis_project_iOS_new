@@ -67,8 +67,6 @@ class PersonRoleByPersonViewController: UIViewController, UIPickerViewDelegate, 
         }
 
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func saveClick(_ sender: UIButton) {
@@ -114,7 +112,7 @@ class PersonRoleByPersonViewController: UIViewController, UIPickerViewDelegate, 
         }
     }
     
-    // The data to return fopr the row and component (column) that's being passed in
+    // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == ProjectPicker{
             return projectsNames[row]

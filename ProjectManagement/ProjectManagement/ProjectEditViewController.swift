@@ -167,7 +167,7 @@ class ProjectEditViewController: UIViewController, UITableViewDelegate,  UITable
                   else { return }
             
             let project = Projekt(SifProjekta: self.id, NazProjekta: name, OpisProjekta: desc, DatPocetka: startDate, DatZavrsetka: endDate)
-            // self.db.updateProjectByID(project: project)
+            self.db.updateProjectByID(project: project)
             
         }
         
@@ -221,7 +221,7 @@ class ProjectEditViewController: UIViewController, UITableViewDelegate,  UITable
         else{
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let destination = storyboard.instantiateViewController(withIdentifier: "PersonRoleByProjectViewController") as! PersonRoleByProjectViewController
-            destination.title = "Uredi zaduženje osobe"
+            destination.title = "Uredi zaduženje projekta"
             
             destination.projectId = self.id
             destination.personRoleId = 0 // OVDJE dohvatiti id zaduzenja

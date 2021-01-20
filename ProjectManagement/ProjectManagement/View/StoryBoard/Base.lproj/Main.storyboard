@@ -537,18 +537,6 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMJ-ZO-9yi">
-                                <rect key="frame" x="38" y="774" width="164" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Obriši zaduženje">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonClick:" destination="jy7-Dr-WjW" eventType="touchUpInside" id="ekP-dw-kEO"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9s-W6-Yz7">
                                 <rect key="frame" x="212" y="774" width="164" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -559,6 +547,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonClick:" destination="jy7-Dr-WjW" eventType="touchUpInside" id="qar-vI-3Or"/>
+                                    <action selector="saveClick:" destination="dwm-PP-q5H" eventType="touchUpInside" id="rzf-m1-2e8"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Projekt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nng-Nb-WgG">
@@ -568,6 +557,20 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMJ-ZO-9yi">
+                                <rect key="frame" x="38" y="774" width="164" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Obriši zaduženje">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClick:" destination="jy7-Dr-WjW" eventType="touchUpInside" id="ekP-dw-kEO"/>
+                                    <action selector="deleteClick:" destination="dwm-PP-q5H" eventType="touchUpInside" id="HC1-m6-yWm"/>
+                                    <action selector="saveClick:" destination="dwm-PP-q5H" eventType="touchUpInside" id="ZHe-cU-kqS"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bA-RK-43h">
                                 <rect key="frame" x="72" y="149" width="266" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -580,6 +583,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="CKi-KL-mI3"/>
+                    <connections>
+                        <outlet property="DatePicker" destination="t6a-ON-jKV" id="gp1-Sp-FYP"/>
+                        <outlet property="DeleteButton" destination="vMJ-ZO-9yi" id="fnc-qH-H6q"/>
+                        <outlet property="PersonPicker" destination="IJL-HB-N5k" id="ruL-FB-faa"/>
+                        <outlet property="ProjectNameLabel" destination="0bA-RK-43h" id="vTn-uC-aya"/>
+                        <outlet property="RolePicker" destination="lLl-qp-ZDA" id="Umq-OT-Wwf"/>
+                        <outlet property="UpdateButton" destination="W9s-W6-Yz7" id="nN4-EJ-b8Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QmH-u0-MHP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

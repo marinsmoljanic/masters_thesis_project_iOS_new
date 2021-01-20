@@ -129,16 +129,14 @@ class PersonEditViewController: UIViewController, UITableViewDelegate,  UITableV
         let alert = UIAlertController(title: "Promjena osobnih podataka", message: nil, preferredStyle: .alert)
         alert.addTextField { (tf) in tf.text = self.firstName}
         alert.addTextField { (tf) in tf.text = self.secondName}
-        alert.addTextField { (tf) in tf.text = self.personalID}
 
         alert.addAction(UIAlertAction(title: "Povratak", style: .cancel, handler: nil))
         let action = UIAlertAction(title: "Pohrani", style: .default) { (_) in
             guard let firstName = alert.textFields![0].text,
-                  let secondName = alert.textFields![1].text,
-                  let personalID = alert.textFields![2].text
+                  let secondName = alert.textFields![1].text
                   else { return }
             
-            let osoba = Osoba(idOsobe: self.index, imeOsobe: firstName, prezimeOsobe: secondName, OIB: personalID)
+            let osoba = Osoba(idOsobe: self.index, imeOsobe: firstName, prezimeOsobe: secondName, OIB: "personalID")
             self.db.updatePersonByID(person: osoba)}
         
         let delete = UIAlertAction(title: "Obrisi", style: .destructive) { (_) in
