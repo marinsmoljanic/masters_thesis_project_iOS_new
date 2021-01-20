@@ -136,14 +136,11 @@ class ProjectsViewController: UIViewController, UITableViewDelegate,  UITableVie
                 
                 else { return }
 
-            let _datumPocetka = Int(datumPocetka)
-            let _datumZavrsetka = Int(datumZavrsetka)
-
             let projekt = Projekt(SifProjekta: 0,
                                   NazProjekta: nazivProjekta,
                                   OpisProjekta: opisProjekta,
-                                  DatPocetka: _datumPocetka!,
-                                  DatZavrsetka: _datumZavrsetka!)
+                                  DatPocetka: datumPocetka,
+                                  DatZavrsetka: datumZavrsetka)
             self.db.insertProjekt(projekt: projekt)
         }
         alert.addAction(action)

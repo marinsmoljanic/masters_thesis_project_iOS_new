@@ -25,11 +25,11 @@ class DBHelper
         //deleteOsobaByID(id: 5)
         //deleteTableOsoba()
         
+        // deleteTableProjekt()
         // createTableProjekt()
         // insertProjekt(projekt: Projekt(SifProjekta: 5, NazProjekta: "Pleternica", OpisProjekta: "Izrada murala", DatPocetka: 2, DatZavrsetka: 10))
         // procitaniProjekti = readProjekte()
         // deleteProjektByID(id: 4)
-        // deleteTableProjekt()
         
         // createTableUloga()
         // insertUloga(nazUloge: "Vjezbenik")
@@ -199,7 +199,9 @@ class DBHelper
         return psns
     }
     
-    func updatePersonByID(person: Osoba) {let updateStatementStirng = "UPDATE osoba SET ImeOsobe='\(person.getImeOsobe())', PrezimeOsobe='\(person.getPrezimeOsobe())' WHERE IdOsobe=(?);"
+    func updatePersonByID(person: Osoba) {
+        
+        let updateStatementStirng = "UPDATE osoba SET ImeOsobe='\(person.getImeOsobe())', PrezimeOsobe='\(person.getPrezimeOsobe())' WHERE IdOsobe=(?);"
        
         var updateStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(db, updateStatementStirng, -1, &updateStatement, nil) == SQLITE_OK {
@@ -296,8 +298,8 @@ class DBHelper
             
             sqlite3_bind_text(queryStatement, 1, (projekt.getNazivProjekta() as NSString).utf8String, -1, nil)
             sqlite3_bind_text(queryStatement, 2, (projekt.getOpisProjekta() as NSString).utf8String, -1, nil)
-            sqlite3_bind_int(queryStatement, 3, Int32(projekt.getDatPoceta()))
-            sqlite3_bind_int(queryStatement, 4, Int32(projekt.getDatZavrsetka()))
+            sqlite3_bind_text(queryStatement, 3, (projekt.getDatPoceta() as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(queryStatement, 4, (projekt.getDatZavrsetka() as NSString).utf8String, -1, nil)
 
             // SQLITE 3 STEP ----> IF -> SAMO GA IZVEDI I NE VADI NISTA IZ BAZE
             if sqlite3_step(queryStatement) == SQLITE_DONE {
@@ -325,10 +327,10 @@ class DBHelper
                 let SifProjekta = sqlite3_column_int(queryStatement, 0)
                 let NazProjekta = String(describing: String(cString: sqlite3_column_text(queryStatement, 1)))
                 let OpisProjekta = String(describing: String(cString: sqlite3_column_text(queryStatement, 2)))
-                let DatPocetka = sqlite3_column_int(queryStatement, 3)
-                let DatZavrsetka = sqlite3_column_int(queryStatement, 4)
+                let DatPocetka = String(describing: String(cString: sqlite3_column_text(queryStatement, 3)))
+                let DatZavrsetka = String(describing: String(cString: sqlite3_column_text(queryStatement, 4)))
 
-                psns.append(Projekt(SifProjekta: Int(SifProjekta), NazProjekta: NazProjekta, OpisProjekta: OpisProjekta, DatPocetka: Int(DatPocetka), DatZavrsetka: Int(DatZavrsetka)))
+                psns.append(Projekt(SifProjekta: Int(SifProjekta), NazProjekta: NazProjekta, OpisProjekta: OpisProjekta, DatPocetka: DatPocetka, DatZavrsetka: DatZavrsetka))
                 print("\(SifProjekta) | \(NazProjekta) | \(OpisProjekta) | \(DatPocetka) | \(DatZavrsetka)")
             }
         } else {
@@ -548,7 +550,11 @@ class DBHelper
         //        return
         //    }
         //}
-        let queryStatementString = "INSERT INTO ulogaosobaa (SifProjekta, IdOsobe, IdUloge, DatDodjele) VALUES (?, ?, ?, ?);"
+        print("PRIJE INSERTA-----------------------------------------------------------")
+        print(ulogaOsobe.getDatDodjele())
+        print("-----------------------------------------------------------")
+
+        let queryStatementString = "INSERT INTO ulogaosobaa (SifProjekta, IdOsobe, IdUloge, DatDodjele) VALUES (?, ?, ?, '\(ulogaOsobe.getDatDodjele())');"
         var queryStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
             sqlite3_bind_int(queryStatement, 1, Int32(ulogaOsobe.getSifProjekta()))
@@ -566,6 +572,72 @@ class DBHelper
             }
         } else {
             print("INSERT statement on table ULOGA_OSOBE could not be prepared.")
+        }
+        sqlite3_finalize(queryStatement)
+    }
+    
+    func updateUlogaOsobeByPerson(ulogaOsobe:UlogaOsobe){
+        //let uloge = readUloge()
+        //for _uloge in uloge
+        //{
+        //    if _uloge.getIdUloge() == uloga.getIdUloge()
+        //    {
+        //        return
+        //    }
+        //}
+        
+        
+        
+        
+        // UPDATE Customers
+        // SET ContactName='Juan'
+        // WHERE Country='Mexico';
+
+        /*
+        let updateStatementStirng = "UPDATE uloga SET NazUloge='Testna uloga' WHERE IdUloge=(?);"
+        var updateStatement: OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, updateStatementStirng, -1, &updateStatement, nil) == SQLITE_OK {
+            sqlite3_bind_int(updateStatement, 1, Int32(id))
+            if sqlite3_step(updateStatement) == SQLITE_DONE {
+                print("Successfully updater row in table ULOGA.")
+            } else {
+                print("Could not update row.")
+            }
+        } else {
+            print("UPDATE statement could not be prepared")
+        }
+        sqlite3_finalize(updateStatement)
+        
+         
+         CREATE TABLE IF NOT EXISTS ulogaosobaa
+         
+         SifProjekta INTEGER,
+         IdOsobe INTEGER,
+         IdUloge INTEGER,
+         DatDodjele TEXT,
+         
+         FOREIGN KEY (SifProjekta) REFERENCES projekt(SifProjekta) ON DELETE CASCADE,FOREIGN KEY (IdOsobe) REFERENCES osoba(IdOsobe) ON DELETE CASCADE);
+         
+         
+        */
+        
+        // let updateStatementStirngEXAMPLE = "UPDATE osoba SET ImeOsobe='\(person.getImeOsobe())', PrezimeOsobe='\(person.getPrezimeOsobe())' WHERE IdOsobe=(?);"
+
+        
+        let updateStatementString = "UPDATE ulogaosobaa SET SifProjekta='\(ulogaOsobe.getSifProjekta())', IdUloge='\(ulogaOsobe.getIdUloge())', DatDodjele='\(ulogaOsobe.getDatDodjele())' WHERE IdOsobe=(?);"
+        var queryStatement: OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, updateStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+            sqlite3_bind_int(queryStatement, 1, Int32(ulogaOsobe.getIdOsobe()))
+         
+
+            // SQLITE 3 STEP ----> IF -> SAMO GA IZVEDI I NE VADI NISTA IZ BAZE
+            if sqlite3_step(queryStatement) == SQLITE_DONE {
+                print("Successfully updated row in table UlogaOsobe.")
+            } else {
+                print("Could not update row in table UlogaOsobe.")
+            }
+        } else {
+            print("UPDATE statement on table ULOGA_OSOBE could not be prepared.")
         }
         sqlite3_finalize(queryStatement)
     }
@@ -590,8 +662,7 @@ class DBHelper
                 let sifProjekta = sqlite3_column_int(queryStatement, 0)
                 let idOsobe = sqlite3_column_int(queryStatement, 1)
                 let idUloge = sqlite3_column_int(queryStatement, 2)
-                let datDodjele = sqlite3_column_int(queryStatement, 3)
-
+                let datDodjele = String(describing: String(cString: sqlite3_column_text(queryStatement, 3)))
                 let NazProjekta = String(describing: String(cString: sqlite3_column_text(queryStatement, 4)))
                 let ImeOsobe = String(describing: String(cString: sqlite3_column_text(queryStatement, 5)))
                 let PrezimeOsobe = String(describing: String(cString: sqlite3_column_text(queryStatement, 6)))
@@ -600,7 +671,7 @@ class DBHelper
                 psns.append(UlogaOsobeEnriched(SifProjekta: Int(sifProjekta),
                                                IdOsobe: Int(idOsobe),
                                                IdUloge: Int(idUloge),
-                                               DatDodjele: Int(datDodjele),
+                                               DatDodjele: datDodjele,
                                                NazProjekta: NazProjekta,
                                                ImeOsobe: ImeOsobe,
                                                PrezimeOsobe: PrezimeOsobe,
@@ -612,6 +683,23 @@ class DBHelper
         }
         sqlite3_finalize(queryStatement)
         return psns
+    }
+    
+    func deleteUlogaOsobeByPerson(personId:Int) {
+        print("")
+        let deleteStatementStirng = "DELETE FROM ulogaosobaa WHERE IdOsobe = ?;"
+        var deleteStatement: OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, deleteStatementStirng, -1, &deleteStatement, nil) == SQLITE_OK {
+            sqlite3_bind_int(deleteStatement, 1, Int32(personId))
+            if sqlite3_step(deleteStatement) == SQLITE_DONE {
+                print("Successfully deleted row in table ULOGA_OSOBE.")
+            } else {
+                print("Could not delete row in table ULOGA_OSOBE.")
+            }
+        } else {
+            print("DELETE statement could not be prepared")
+        }
+        sqlite3_finalize(deleteStatement)
     }
     
     func deleteUlogaOsobeBySifProjekta(sifProjekta:Int) {

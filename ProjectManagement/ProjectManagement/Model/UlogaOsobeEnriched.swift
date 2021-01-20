@@ -12,13 +12,13 @@ class UlogaOsobeEnriched
     var SifProjekta: Int = 0
     var IdOsobe: Int = 0
     var IdUloge: Int = 0
-    var DatDodjele: Int = 0
+    var DatDodjele: String = ""
     var NazProjekta: String = ""
     var ImeOsobe: String = ""
     var PrezimeOsobe: String = ""
     var NazUloge: String = ""
 
-    init(SifProjekta:Int, IdOsobe:Int, IdUloge:Int, DatDodjele:Int, NazProjekta:String, ImeOsobe:String, PrezimeOsobe:String, NazUloge:String)
+    init(SifProjekta:Int, IdOsobe:Int, IdUloge:Int, DatDodjele:String, NazProjekta:String, ImeOsobe:String, PrezimeOsobe:String, NazUloge:String)
     {
         self.SifProjekta = SifProjekta
         self.IdOsobe = IdOsobe
@@ -51,10 +51,10 @@ class UlogaOsobeEnriched
         self.IdUloge = IdUloge
     }
     
-    func getDatDodjele() -> Int{
+    func getDatDodjele() -> String{
         return self.DatDodjele
     }
-    func setDatDodjele(DatDodjele: Int){
+    func setDatDodjele(DatDodjele: String){
         self.DatDodjele = DatDodjele
     }
     

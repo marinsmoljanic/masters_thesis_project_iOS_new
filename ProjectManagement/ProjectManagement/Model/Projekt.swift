@@ -12,10 +12,10 @@ class Projekt
     var SifProjekta: Int = 0
     var NazProjekta: String = ""
     var OpisProjekta: String = ""
-    var DatPocetka: Int = 0
-    var DatZavrsetka: Int = 0
+    var DatPocetka: String = ""
+    var DatZavrsetka: String = ""
 
-    init(SifProjekta:Int, NazProjekta:String, OpisProjekta:String, DatPocetka:Int, DatZavrsetka:Int)
+    init(SifProjekta:Int, NazProjekta:String, OpisProjekta:String, DatPocetka:String, DatZavrsetka:String)
     {
         self.SifProjekta = SifProjekta
         self.NazProjekta = NazProjekta
@@ -33,10 +33,10 @@ class Projekt
     func getOpisProjekta() -> String{
         return self.OpisProjekta
     }
-    func getDatPoceta() -> Int{
+    func getDatPoceta() -> String{
         return self.DatPocetka
     }
-    func getDatZavrsetka() -> Int{
+    func getDatZavrsetka() -> String{
         return self.DatZavrsetka
     }
     

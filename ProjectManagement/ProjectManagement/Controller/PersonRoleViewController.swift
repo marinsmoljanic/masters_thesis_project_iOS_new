@@ -23,9 +23,6 @@ class PersonRoleViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var ConfirmButton: UIButton!
     
     
-    var osobe = ["Marin", "Klara", "Dominik", "Dusko"]
-    var projekti = ["Puntijarka", "Pleternica", "Diplomski", "Prevoditelj"]
-    var uloge = ["Arhitekt", "Ilustrator", "Dizajner", "Programer"]
     var selectedPersonLocation = 1000
     var selectedProjectLocation = 1000
     var selectedRoleLocation = 1000
@@ -77,14 +74,14 @@ class PersonRoleViewController: UIViewController, UIPickerViewDelegate, UIPicker
         // Create Date Formatter
         let dateFormatter = DateFormatter()
         // Set Date Format
-        dateFormatter.dateFormat = "YYYY-MM-dd"
+        dateFormatter.dateFormat = "dd.MM.YYYY"
         // Convert Date to String
         let formatedDate = dateFormatter.string(from: selectedDate)
         
         print("-------------------------------------")
-        print(personsIds[selectedPersonLocation])
-        print(projectsIds[selectedProjectLocation])
-        print(rolesIds[selectedRoleLocation])
+        // print(personsIds[selectedPersonLocation])
+        // print(projectsIds[selectedProjectLocation])
+        // print(rolesIds[selectedRoleLocation])
         print(formatedDate)
         print("-------------------------------------")
 
@@ -93,7 +90,7 @@ class PersonRoleViewController: UIViewController, UIPickerViewDelegate, UIPicker
                                                         IdOsobe: personsIds[selectedPersonLocation],
                                                         IdUloge: rolesIds[selectedRoleLocation],
                                                         DatDodjele: formatedDate))
-
+        
         /*
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let addPersonRoleDestination = storyboard.instantiateViewController(withIdentifier: "PersonEditViewController") as! PersonEditViewController

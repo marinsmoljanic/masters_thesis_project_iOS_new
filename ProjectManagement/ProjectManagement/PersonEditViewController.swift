@@ -162,8 +162,10 @@ class PersonEditViewController: UIViewController, UITableViewDelegate,  UITableV
         cell.backgroundColor = UIColor.white
 
         if indexPath.row < personRoles.count{
+            let datDodjele = String(personRoles[indexPath.row].getDatDodjele())
             cell.personRoleLabel.text = String("PROJEKT:   " + personRoles[indexPath.row].getNazProjekta() + "\n" +
-                                                "ULOGA:       " + personRoles[indexPath.row].getNazUloge())
+                                                "ULOGA:       " + personRoles[indexPath.row].getNazUloge() + "\n" +
+                                                "DAT.:       " + datDodjele)
         }
         else {
             cell.personRoleLabel.text = "+ Dodaj novo zaduzenje"
@@ -177,35 +179,27 @@ class PersonEditViewController: UIViewController, UITableViewDelegate,  UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         tableView.deselectRow(at: indexPath, animated: true)
-        print("--------------------------------")
-        print(String(indexPath.row))
-        print("--------------------------------")
         
         if (indexPath.row == personRoles.count){
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let addPersonRoleDestination = storyboard.instantiateViewController(withIdentifier: "PersonRoleViewController") as! PersonRoleViewController
             addPersonRoleDestination.title = "Dodavanje zaduženja"
             
-            /*
-            destination.index = persons[indexPath.row].getIdOsobe()
-            destination.firstName = persons[indexPath.row].getImeOsobe()
-            destination.secondName = persons[indexPath.row].getPrezimeOsobe()
-            destination.personalID = persons[indexPath.row].getOIBOsobe()
-            */
-            
             navigationController?.pushViewController(addPersonRoleDestination, animated: true)
         }
+        else{
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let destination = storyboard.instantiateViewController(withIdentifier: "PersonRoleByPersonViewController") as! PersonRoleByPersonViewController
+            destination.title = "Uredi zaduženje osobe"
+            
+            destination.personId = self.index
+            destination.personRoleId = 0 // OVDJE dohvatiti id zaduzenja
+            destination.personName = self.firstName + " " + self.secondName + " " + String(self.index)
 
-        /*  let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let destination = storyboard.instantiateViewController(withIdentifier: "PersonEditViewController") as! PersonEditViewController
-        destination.title = "Detalji osobe"
-        
-        destination.index = persons[indexPath.row].getIdOsobe()
-        destination.firstName = persons[indexPath.row].getImeOsobe()
-        destination.secondName = persons[indexPath.row].getPrezimeOsobe()
-        destination.personalID = persons[indexPath.row].getOIBOsobe()
+            navigationController?.pushViewController(destination, animated: true)
+        }
 
-        navigationController?.pushViewController(destination, animated: true)*/
+
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -228,7 +222,7 @@ class PersonEditViewController: UIViewController, UITableViewDelegate,  UITableV
         
         let personRoleLabel: UILabel = {
             let label = UILabel()
-            label.numberOfLines = 2
+            label.numberOfLines = 3
             label.textColor = UIColor.white
             label.font = UIFont.boldSystemFont(ofSize: 16)
             label.translatesAutoresizingMaskIntoConstraints = false
