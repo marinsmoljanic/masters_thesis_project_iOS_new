@@ -12,9 +12,9 @@ class UlogaOsobe
     var SifProjekta: Int = 0
     var IdOsobe: Int = 0
     var IdUloge: Int = 0
-    var DatDodjele: Int = 0
+    var DatDodjele: String = ""
 
-    init(SifProjekta:Int, IdOsobe:Int, IdUloge:Int, DatDodjele:Int)
+    init(SifProjekta:Int, IdOsobe:Int, IdUloge:Int, DatDodjele:String)
     {
         self.SifProjekta = SifProjekta
         self.IdOsobe = IdOsobe
@@ -43,10 +43,10 @@ class UlogaOsobe
         self.IdUloge = IdUloge
     }
     
-    func getDatDodjele() -> Int{
+    func getDatDodjele() -> String{
         return self.DatDodjele
     }
-    func setDatDodjele(DatDodjele: Int){
+    func setDatDodjele(DatDodjele: String){
         self.DatDodjele = DatDodjele
     }
 }

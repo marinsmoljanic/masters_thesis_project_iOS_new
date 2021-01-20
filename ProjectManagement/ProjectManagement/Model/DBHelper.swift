@@ -25,16 +25,16 @@ class DBHelper
         //deleteOsobaByID(id: 5)
         //deleteTableOsoba()
         
-        //createTableProjekt()
-        //insertProjekt(projekt: Projekt(SifProjekta: 5, NazProjekta: "Pleternica", OpisProjekta: "Izrada murala", DatPocetka: 2, DatZavrsetka: 10))
-        procitaniProjekti = readProjekte()
+        // createTableProjekt()
+        // insertProjekt(projekt: Projekt(SifProjekta: 5, NazProjekta: "Pleternica", OpisProjekta: "Izrada murala", DatPocetka: 2, DatZavrsetka: 10))
+        // procitaniProjekti = readProjekte()
         // deleteProjektByID(id: 4)
         // deleteTableProjekt()
         
         // createTableUloga()
         // insertUloga(nazUloge: "Vjezbenik")
         // insertUloga(nazUloge: "Pripravnik")
-        procitaneUloge = readUloge()
+        // procitaneUloge = readUloge()
         // deleteUlogaByID(id: 0)
         // deleteTableUloga()
         
@@ -43,7 +43,7 @@ class DBHelper
         // insertUlogaOsobe(ulogaOsobe: UlogaOsobe(SifProjekta: 1, IdOsobe: 1, IdUloge: 1, DatDodjele: 222))
         // insertUlogaOsobe(ulogaOsobe: UlogaOsobe(SifProjekta: 2, IdOsobe: 1, IdUloge: 2, DatDodjele: 222))
         // deleteUlogaOsobeBySifProjekta(sifProjekta: 4)
-        ulogeOsoba = readAllUlogaOsoba()
+        // ulogeOsoba = readAllUlogaOsoba()
     }
 
     let dbPath: String = "myDb.sqlite"
@@ -521,7 +521,7 @@ class DBHelper
     func createTableUlogaOsobe() {
         print("TABLICA ULOGA_OSOBE")
         print("________________________________________________")
-        let createTableString = "CREATE TABLE IF NOT EXISTS ulogaosobaa (SifProjekta INTEGER,IdOsobe INTEGER,IdUloge INTEGER,DatDodjele INTEGER,FOREIGN KEY (SifProjekta) REFERENCES projekt(SifProjekta) ON DELETE CASCADE,FOREIGN KEY (IdOsobe) REFERENCES osoba(IdOsobe) ON DELETE CASCADE);"
+        let createTableString = "CREATE TABLE IF NOT EXISTS ulogaosobaa (SifProjekta INTEGER,IdOsobe INTEGER,IdUloge INTEGER,DatDodjele TEXT,FOREIGN KEY (SifProjekta) REFERENCES projekt(SifProjekta) ON DELETE CASCADE,FOREIGN KEY (IdOsobe) REFERENCES osoba(IdOsobe) ON DELETE CASCADE);"
         var createTableStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(db, createTableString, -1, &createTableStatement, nil) == SQLITE_OK
         {
@@ -554,7 +554,9 @@ class DBHelper
             sqlite3_bind_int(queryStatement, 1, Int32(ulogaOsobe.getSifProjekta()))
             sqlite3_bind_int(queryStatement, 2, Int32(ulogaOsobe.getIdOsobe()))
             sqlite3_bind_int(queryStatement, 3, Int32(ulogaOsobe.getIdUloge()))
-            sqlite3_bind_int(queryStatement, 4, Int32(ulogaOsobe.getDatDodjele()))
+            // sqlite3_bind_int(queryStatement, 4, Int32(ulogaOsobe.getDatDodjele()))
+            sqlite3_bind_text(queryStatement, 4, (ulogaOsobe.getDatDodjele() as NSString).utf8String, -1, nil)
+
 
             // SQLITE 3 STEP ----> IF -> SAMO GA IZVEDI I NE VADI NISTA IZ BAZE
             if sqlite3_step(queryStatement) == SQLITE_DONE {

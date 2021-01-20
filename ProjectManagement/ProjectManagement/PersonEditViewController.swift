@@ -180,6 +180,21 @@ class PersonEditViewController: UIViewController, UITableViewDelegate,  UITableV
         print("--------------------------------")
         print(String(indexPath.row))
         print("--------------------------------")
+        
+        if (indexPath.row == personRoles.count){
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let addPersonRoleDestination = storyboard.instantiateViewController(withIdentifier: "PersonRoleViewController") as! PersonRoleViewController
+            addPersonRoleDestination.title = "Dodavanje zaduženja"
+            
+            /*
+            destination.index = persons[indexPath.row].getIdOsobe()
+            destination.firstName = persons[indexPath.row].getImeOsobe()
+            destination.secondName = persons[indexPath.row].getPrezimeOsobe()
+            destination.personalID = persons[indexPath.row].getOIBOsobe()
+            */
+            
+            navigationController?.pushViewController(addPersonRoleDestination, animated: true)
+        }
 
         /*  let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let destination = storyboard.instantiateViewController(withIdentifier: "PersonEditViewController") as! PersonEditViewController
