@@ -26,6 +26,9 @@
 		BDDA82752596A18A002BA120 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA82742596A18A002BA120 /* Person.swift */; };
 		BDDA827F25A0D35E002BA120 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA827E25A0D35E002BA120 /* PersonViewController.swift */; };
 		BDDA828525A0F49C002BA120 /* PersonEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDA828425A0F49C002BA120 /* PersonEditViewController.swift */; };
+		BDF707C625B8414700A3CC19 /* PersonRoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF707C525B8414700A3CC19 /* PersonRoleViewController.swift */; };
+		BDF707C925B878C800A3CC19 /* PersonRoleByPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF707C825B878C800A3CC19 /* PersonRoleByPersonViewController.swift */; };
+		BDF707CC25B8792900A3CC19 /* PersonRoleByProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF707CB25B8792900A3CC19 /* PersonRoleByProjectViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		BDDA82742596A18A002BA120 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		BDDA827E25A0D35E002BA120 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersonViewController.swift; path = ProjectManagement/Controller/PersonViewController.swift; sourceTree = SOURCE_ROOT; };
 		BDDA828425A0F49C002BA120 /* PersonEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonEditViewController.swift; sourceTree = "<group>"; };
+		BDF707C525B8414700A3CC19 /* PersonRoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRoleViewController.swift; sourceTree = "<group>"; };
+		BDF707C825B878C800A3CC19 /* PersonRoleByPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRoleByPersonViewController.swift; sourceTree = "<group>"; };
+		BDF707CB25B8792900A3CC19 /* PersonRoleByProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRoleByProjectViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,9 @@
 				BDDA826125968D6B002BA120 /* AddPersonViewController.swift */,
 				BD57ACA725A3863E00FD148C /* ProjectsViewController.swift */,
 				BD57ACB225A3A94A00FD148C /* RoleViewController.swift */,
+				BDF707C525B8414700A3CC19 /* PersonRoleViewController.swift */,
+				BDF707C825B878C800A3CC19 /* PersonRoleByPersonViewController.swift */,
+				BDF707CB25B8792900A3CC19 /* PersonRoleByProjectViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -227,10 +236,13 @@
 				BDDA82752596A18A002BA120 /* Person.swift in Sources */,
 				BDDA824925966F0F002BA120 /* ViewController.swift in Sources */,
 				BDDA82722596A125002BA120 /* UlogaOsobe.swift in Sources */,
+				BDF707C925B878C800A3CC19 /* PersonRoleByPersonViewController.swift in Sources */,
 				BDDA824525966F0F002BA120 /* AppDelegate.swift in Sources */,
 				BDDA826525969FB3002BA120 /* DBHelper.swift in Sources */,
 				BDA4203925AC892B0009B80B /* UlogaOsobeEnriched.swift in Sources */,
 				BD57ACB325A3A94A00FD148C /* RoleViewController.swift in Sources */,
+				BDF707CC25B8792900A3CC19 /* PersonRoleByProjectViewController.swift in Sources */,
+				BDF707C625B8414700A3CC19 /* PersonRoleViewController.swift in Sources */,
 				BDDA828525A0F49C002BA120 /* PersonEditViewController.swift in Sources */,
 				BDDA826B2596A06A002BA120 /* Projekt.swift in Sources */,
 				BDDA824725966F0F002BA120 /* SceneDelegate.swift in Sources */,
